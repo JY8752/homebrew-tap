@@ -5,20 +5,20 @@
 class NoteCli < Formula
   desc "note-cli is a CLI command tool for creating, writing, and managing note articles"
   homepage "https://github.com/JY8752/note-cli"
-  version "0.7.0"
+  version "0.7.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/JY8752/note-cli/releases/download/v0.7.0/note-cli_Darwin_x86_64.tar.gz"
-      sha256 "9edaf33c156e2cb236b5554a081ebe1b5e1063738db23ad08e027d6c3ee44fd3"
+      url "https://github.com/JY8752/note-cli/releases/download/v0.7.1/note-cli_Darwin_x86_64.tar.gz"
+      sha256 "a877e61dcc4123ec6c1373ca22ffc1bcea74d11aec6227ea9742235bbcf9a8c3"
 
       def install
         bin.install "note-cli"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/JY8752/note-cli/releases/download/v0.7.0/note-cli_Darwin_arm64.tar.gz"
-      sha256 "da913136d0148449d18a5d11dab18a7a3db95d51c18ff87ab910206c5ae8ab5d"
+      url "https://github.com/JY8752/note-cli/releases/download/v0.7.1/note-cli_Darwin_arm64.tar.gz"
+      sha256 "36977bd8afe15f5be58f3b16d6867ae2bf2853478d4e41d71dac784c0c71ea81"
 
       def install
         bin.install "note-cli"
@@ -27,17 +27,17 @@ class NoteCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/JY8752/note-cli/releases/download/v0.7.0/note-cli_Linux_x86_64.tar.gz"
-      sha256 "e2c39fd08f36908535db76ed0f82d8534d1139056bd6db184a820fb39736b3ca"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/JY8752/note-cli/releases/download/v0.7.1/note-cli_Linux_arm64.tar.gz"
+      sha256 "3de5a8695b360280b316586383eed3ef4b443ef7e34309a35fce5e4588334def"
 
       def install
         bin.install "note-cli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/JY8752/note-cli/releases/download/v0.7.0/note-cli_Linux_arm64.tar.gz"
-      sha256 "aecb826f78332638572a15174c416abf4c26d7fde51ad9c7a1d65f8f13a5c355"
+    if Hardware::CPU.intel?
+      url "https://github.com/JY8752/note-cli/releases/download/v0.7.1/note-cli_Linux_x86_64.tar.gz"
+      sha256 "bb69d22dc3c3d800546017f6c5d195a3f6b4d0973bb168990f64a95f5ed0cdf1"
 
       def install
         bin.install "note-cli"
